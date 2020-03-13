@@ -1,0 +1,1229 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-size: 1vw;
+    font-family: "Gotham Pro", sans-serif;
+}
+
+body {
+    padding-left: 150px;
+    overflow-x: hidden;
+}
+
+.column-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    width: 150px;
+    height: 100%;
+    background: #f6f6f6;
+}
+
+.column-menu__logo {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.column-menu__logo > img {
+    padding-top: 26px;
+}
+
+.column-menu__logo > p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #f73934;
+}
+
+.column-menu__el {
+    width: 100%;
+    height: 120px;
+    text-align: center;
+}
+
+.column-menu__el:hover {
+    margin-top: -1px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+
+.column-menu__el > .gallery-pic {
+    padding-top: 28px;
+    padding-right: 2px;
+}
+
+.column-menu__el > .about-project-pic {
+    padding-top: 22px;
+    padding-right: 2px;
+}
+
+.column-menu__el > .map-pic {
+    padding-top: 25px;
+    padding-right: 5px;
+
+}
+
+.column-menu__el > p {
+    margin: 0;
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    background-color: #f6f6f6;
+
+    top: 0px;
+    transition: 1.2s top ease;
+}
+
+.mobile-logo {
+    width: 60px;
+    height: 55px;
+    margin-left: 17px;
+    background-image: url("img/menu/logo.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.mobile-menu__item > span {
+    margin-left: -16px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    color: #f73934;
+}
+
+.menu__wrap {
+    display: none;
+    width: 100%;
+    background-color: royalblue;
+    
+}
+
+.menu__btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-right: 16px;
+    position: relative;
+}
+
+.menu__btn span,
+.menu__btn span::before,
+.menu__btn span::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -2.5px;
+    margin-left: -16px;
+    width: 32px;
+    height: 5px;
+    background-color: #fc202e;
+}
+
+.menu__btn span::before,
+.menu__btn span::after {
+    content: '';
+    display: block;
+    transition: 0.3s;
+}
+
+.menu__btn span::before {
+    transform: translateY(-10px);
+}
+
+.menu__btn span::after {
+    transform: translateY(10px);
+}
+
+.menu_close span {
+    height: 0;
+}
+
+.menu_close span::before {
+    transform: rotate(45deg);
+}
+
+.menu_close span::after {
+    transform: rotate(-45deg);
+}
+
+.wrap__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 80px;
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid rgba(155,155,155,.18);
+    background-color: #f6f6f6;
+}
+
+.wrap__item_close {
+    height: 60px;
+    font-size: 12px;
+    color: #8e8d8d;
+    background-color: #f1eeee;
+    text-transform: uppercase;
+}
+
+[data-wrap] {
+    position:relative;
+}
+
+[data-wrap]::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+[data-wrap="gallery"]::after {
+    background-image: url("img/menu/gallery.png");
+    background-repeat: no-repeat;
+}
+
+[data-wrap="about-project"]::after {
+    background-image: url("img/menu/about-project.png");
+    background-repeat: no-repeat;
+}
+
+[data-wrap="summer-with-lays"]::after {
+    background-image: url("img/menu/summer-with-lays.png");
+    background-repeat: no-repeat;
+}
+
+.main-header {
+    height: 100%;
+    position: relative;
+    background-color: #ffda2d;
+}
+
+.heading-block {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: 32.25rem;
+    padding: 4.8rem 5.3rem;
+    background: url("img/summer-with-lays/background.jpg");
+    background-size: cover;
+    animation: block-to-right 1.3s ease;
+}
+
+@keyframes block-to-right {
+    0% {
+        transform: translateX(30%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes menu-left-to-right {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes menu-right-to-left {
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes menu-left-to-right_hide {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+}
+
+@keyframes menu-right-to-left_hide {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+}
+.heading-block__content {
+    display: flex;
+}
+
+.tags__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10rem;
+    padding: 0 2rem 0 0;
+}
+
+.tags__item-pic {
+    width: 8rem;
+    height: 8rem;
+    margin: 0;
+    background-color: white;
+    border-radius: 50%;
+}
+
+[data-text="camera"] {
+    width: 10rem;
+    margin-left: -5rem;
+    text-align: center;
+}
+
+[data-icon] {
+    position: relative;
+}
+
+[data-icon]::after {
+    content: "";
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+[data-icon="box"]::after {
+    background-image: url("img/summer-with-lays/box.png");
+}
+
+[data-icon="camera"]::after {
+    background-image: url("img/summer-with-lays/photo.png");
+}
+
+[data-icon="heart"]::after {
+    background-image: url("img/summer-with-lays/heart.png");
+    top: 50%;
+}
+
+.tags__item > p {
+    margin: 0;
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+.tags__item__red-text {
+    color: #f73934;
+}
+
+.heading-block__title {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3.4rem;
+}
+
+.heading-block__title > span{
+    align-items: flex-start;
+    padding: 0;
+    color: #f73934;
+}
+
+.heading-block__title > span:first-child {
+    margin-left: -0.2rem;
+    font-size: 6.5rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.heading-block__title > span:nth-child(2) {
+    margin-top: -0.9rem;
+    margin-left: -0.5rem;
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 0.28rem; 
+    text-transform: uppercase;
+}
+
+.heading-block__title > span:last-child {
+    margin-top: -1.3rem;
+    margin-left: -0.5rem;
+    font-size: 5rem;
+    font-weight: 300;
+}
+
+.heading-block__title_bold {
+    font-size: 5.5rem;
+    font-weight: 900;
+    letter-spacing: 0.08rem;
+}
+
+.main-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.main-section__item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 46rem;
+    background-color: white;
+}
+
+@keyframes block-to-left {
+    0% {
+        transform: translateX(-30%);
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animation-move-to-left {
+    animation: block-to-left 1.3s ease;
+}
+
+.animation-move-to-right {
+    animation: block-to-right 1.3s ease;
+}
+
+.first-block {
+    width: 50rem;
+}
+
+.second-block {
+    width: 50rem;
+}
+
+[data-img="gallery__banner"] {
+    position: relative;
+    z-index: 5;
+    background-image: url("img/gallery/gallery__banner.jpg");
+    background-size: 100% 100%;
+}
+
+[data-img="red-background"] {
+    position: relative;
+    z-index: 5;
+    background-image: url("img/lays-promotions/red-background.png");
+    background-size: 100% 100%;
+}
+
+.red-triangle {
+    position: absolute;
+    top: 13.2692rem;
+    right: -7.05rem;
+    z-index: 20;
+    width: 7.05rem;
+    height: 100px;
+    background-image: url("img/lays-promotions/triangle_red.png");
+    background-repeat: no-repeat;
+}
+
+[data-img="lays-on-the-beach"] {
+    position: relative;
+    z-index: 3;
+
+    background-image: url("img/lays-promotions/lays-on-the-beach.jpg");
+    background-size: 100% 100%;
+    transition: transform 10s linear;
+}
+
+[data-img="lays-on-the-beach"]:hover {
+    z-index: 1;
+    transform: scale(1.1);   
+}
+
+[data-img="gallery__bg"] {
+    background-color: white;
+    position: relative;
+    z-index: 5;
+}
+
+[data-img="lays-balloon"] {
+    overflow-x: hidden;
+    position: relative;
+    z-index: 4;
+
+    background-image: url("img/lays-promotions/lays-balloon.jpg");
+    background-size: 100% 100%;
+
+    transition: transform 10s linear;
+}
+
+[data-img="lays-balloon"]:hover {
+    transform: scale(1.1);   
+}
+
+
+[data-img="lays-map"] {
+    position: relative;
+    z-index: 5;
+    background-image: url("img/lays-promotions/lays-map.jpg");
+    background-size: 100% 100%;
+}
+
+.vk-insta-pointer {
+    width: 12rem;
+    height: 15rem;
+    margin: 2.5rem 0 0 7.2rem;
+    background-image: url("img/gallery/vk-insta-pointer.png");
+    background-size: 100% 100%;
+}
+
+.gallery__text {
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    padding-top: 0.4rem;
+    padding-left: 6.2rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3.7rem;
+    letter-spacing: -0.13rem;
+}
+
+.gallery__text_red {
+    width: 18rem;
+    margin-top: 0.3rem;
+    margin-left: -0.5rem;
+    padding-left: 0.5rem;
+    font-weight: 400;
+    color: #f73934;
+    background-color: white;
+}
+
+.gallery__btn {
+    display: block;
+    width: 7.8rem;
+    margin-left: 5.5rem;
+    margin-top: 2.6rem;
+    padding: 1.2rem 3.9rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 0.2rem solid white;
+}
+
+.gallery__btn:hover {
+    background-color: rgba(143, 12, 0, 0.1);
+    transition: .5s;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 0.4rem;
+    height: 42rem;
+    margin: 2rem 1.8rem;
+}
+
+.gallery-container__item:first-child {
+    background-image: url("img/gallery/gallery-1.png");
+    background-size: cover;
+}
+
+.gallery-container__item:nth-child(2) {
+    background-image: url("img/gallery/gallery-2.png");
+    background-size: cover;
+}
+
+.gallery-container__item:nth-child(3) {
+    background-image: url("img/gallery/gallery-3.png");
+    background-size: cover;
+}
+
+.gallery-container__item:nth-child(4) {
+    background-image: url("img/gallery/gallery-4.png");
+    background-size: cover;
+}
+
+.gallery-container__item:nth-child(5) {
+    background-image: url("img/gallery/gallery-5.png");
+    background-size: cover;
+}
+
+.gallery-container__item:nth-child(6) {
+    background-image: url("img/gallery/gallery-6.png");
+    background-size: cover;
+}
+
+.gallery-container__item:nth-child(7) {
+    background-image: url("img/gallery/gallery-7.png");
+    background-size: cover;
+}
+
+.gallery-container__item:nth-child(8) {
+    background-image: url("img/gallery/gallery-8.png");
+    background-size: cover;
+}
+
+.gallery-container__item:last-child {
+    background-image: url("img/gallery/gallery-9.png");
+    background-size: cover;
+}
+
+.prizes-block {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 25rem;
+    padding-top: 2rem;
+}
+
+.prizes-block_pic > img {
+    padding-top: 3.6rem;
+    padding-left: 3rem;
+    width: 17.5rem;
+    height: 19.4rem;
+}
+.prizes-block_text {
+    width: 17rem;
+    padding-top: 4.8rem;
+    padding-left: 0.4rem;
+    font-size: 3.9rem;
+    font-weight: 700;
+    line-height: 4.168rem;
+    color: white;
+}
+
+.prizes__description {
+    padding: 0.02rem 5.8rem;
+}
+
+.prizes__description > p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: -0.0045rem;
+    line-height: 1.8rem;
+    color: white;
+}
+
+.prizes__btn {
+    display: block;
+    width: 12.05rem;
+    margin-top: 1.55rem;
+    margin-left: 5.65rem;
+    padding: 1.185rem 1rem 1.185rem 2.51rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase; 
+    border: 0.2rem solid white;
+}
+
+.prizes__btn:hover {
+    background-color: rgba(143, 12, 0, 0.1);
+    transition: .5s;
+}
+
+.map-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.yellow-triangle {
+    position: absolute;
+    top: 47%;
+    left: -47px;
+    z-index: 2;
+    width: 47px;
+    height: 100px;
+    background-image: url("img/lays-promotions/triangle_yellow.png");
+    background-repeat: no-repeat;
+}
+
+.map__title > span {
+    display: block;
+    margin-left: -0.38rem;
+    padding-top: 30.09rem;
+    font-size: 4.4rem;
+    font-weight: 700;
+    letter-spacing: -0.05rem;
+    color: #301f20;
+}
+
+.map__btn a {
+    display: block;
+    width: 10rem;
+    margin-top: 2.3rem;
+    padding: 1.185rem 2.8rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.11rem;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 0.2rem solid white;
+}
+
+.map__btn a:hover {
+    background-color: rgba(143, 12, 0, 0.1);
+    transition: .5s;
+}
+
+footer {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    width: 100%;
+    height: 6.3rem;
+}
+
+.footer-field {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #3c3c3c;
+}
+
+.footer-field__description {
+    display: flex;
+    align-items: center;
+}
+
+.footer-field__description > img {
+    height: 100%;
+    margin-left: 1.72rem;
+}
+
+.footer-field__description > p{
+    margin-left: 0.45rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.017rem;
+    font-family: Arial, sans-serif;
+    color: #b4b4b4;
+}
+
+.footer__mobile {
+    display: none;
+}
+
+.mess__section {
+    display: flex;
+}
+
+.mess__section > a {
+    width: 6.5rem;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.link_fb {
+    background-color: #326aa2;
+    background-image: url("img/footer/facebook-icon.jpg");
+}
+
+.link_vk {
+    background-color: #3479a8;
+    background-image: url("img/footer/vk-icon.jpg");
+}
+
+.link_world {
+    background-color: #edbf11;
+    background-image: url("img/footer/world-icon.jpg");
+}
+
+.link_yt {
+    background-color: #c4070e;
+    background-image: url("img/footer/yt-icon.jpg");
+}
+
+@keyframes left-to-right {
+    0% {
+        transform: translateX(-320px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes right-to-left {
+    0% {
+        transform: translateX(320px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes left-to-right_hide {
+    0% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-320px);
+        opacity: 0;
+    }
+}
+
+@keyframes right-to-left_hide {
+    0% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(320px);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    html {
+        font-size: 0.99vw;
+    }
+
+    .footer-field__description > img {
+            margin-left: 1.55rem;
+    }
+
+    .footer-field__description > p{
+            margin-left: 0.36rem;
+            padding-top: 0.15rem;
+            font-size: 0.92rem;
+            letter-spacing: -0.025rem;
+    }
+}
+
+
+
+@media screen and (max-width: 640px) {
+    .column-menu {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+        height: 80px;
+        position: fixed;
+        z-index: 9;
+    }
+
+    .menu__wrap {
+        position: fixed;
+        top: 80px;
+        z-index: 2;
+        display: none;
+        z-index: 9;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    .mobile-logo {
+        width: 58px;
+        height: 50px;
+        margin-top: 0px;
+        margin-left: 18px;
+    }
+
+    .mobile-menu__item > span {
+        margin-left: -5px;
+        font-size: 20px;
+    }
+
+    .heading-block {
+        height: 165rem;
+        padding-top: 80px;
+        text-align: center;
+        background-image: url("img/summer-with-lays/background_mobile.jpg");
+        animation: none;
+    }
+
+    .mobile__edit:nth-child(2) {
+        order: -1;
+    }
+
+    .heading-block__title {
+        padding: 0;
+    }
+
+    .heading-block__title > span:nth-child(1){
+        padding-top: 4px;
+        padding-left: 12px;
+        font-size: 44px;
+        letter-spacing: 2px;
+        line-height: 50px;
+    }
+
+    .heading-block__title > span:nth-child(2){
+        margin-top: -12px;
+        padding-left: 7px;
+        font-size: 25px;
+        letter-spacing: 1px;
+        line-height: 40px;
+    }
+
+    .heading-block__title > span:nth-child(3){
+        margin-top: -19px;
+        padding-left: 5px;
+        font-size: 34px;
+        line-height: 50px;
+
+    }
+
+    .heading-block__title_bold {
+        font-size: 39px;
+    }
+
+    .heading-block__content {
+        margin: 0 1.5rem;
+    }
+
+    .tags__item {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding-top: 13px;
+    }
+
+    .tags__item-pic {
+        margin-top: 3px;
+        width: 64px;
+        height: 64px;
+    }
+
+    [data-icon]::after {
+        width: 80%;
+        height: 80%;
+    }
+
+    .tags__item > p {
+        margin: 0;
+        padding-top: 10px;
+        font-size: 13px;
+        text-align: center;
+        letter-spacing: -0.5px;
+        line-height: normal;
+    }
+
+    [data-text="camera"] {
+        position: absolute;
+        width: 100px;
+        top: 80px;
+        text-align: center;
+    }
+
+    .main-section__item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        animation: none;
+    }
+
+    .first-block {
+        width: 100%;
+        height: 101.015rem;
+        background-size: cover;
+    }
+
+    .second-block {
+        width: 100%;
+        height: 101.015rem;
+        background-size: cover;
+    }
+    
+    [data-img="gallery__banner"] {
+        height: 100.10rem;
+        margin-top: 2rem;
+        background-image: url("img/gallery/gallery__banner_mobile.png");
+    }
+
+    .vk-insta-pointer {
+        width: 42.934rem;
+        height: 42.934rem;
+        margin-top: 7.8rem;
+        margin-left: 7rem;
+        background-image: url("img/gallery/vk-insta-pointer_mobile.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .gallery__text {
+        width: 40rem;
+        margin-top: -4.8rem;
+        margin-left: 5.3rem;
+        font-size: 6.4394rem;
+        font-weight: 700;
+        line-height: 8.83rem;
+        letter-spacing: -0.1rem;
+    }
+
+    .gallery__text_red {
+        width: 100%;
+        height: 100%;
+        margin-left: -1rem;
+        font-size: 6.56565rem;
+        font-weight: 400;
+        color: #f73934;
+        background-color: white;
+    }
+
+    .gallery__btn {
+        position: absolute;
+        display: block;
+        width: 31.1rem;
+        margin-top: -9rem;
+        margin-left: 56.5rem;
+        padding: 2.35rem 1.4rem;
+        font-size: 3.7rem;
+        text-align: center;
+        border: 0.5rem solid white;
+    }
+
+    .gallery-container {
+        grid-gap: 1rem;
+        height: 100%;
+        margin: 0;
+    }
+
+    [data-img="gallery__bg"] {
+        padding: 4.8rem;
+        box-sizing: border-box;
+    }
+
+    [data-img="red-background"] {
+        position: relative;
+        height: 101.015rem;
+        z-index: 2;
+        background-image: url("img/lays-promotions/red-background_mobile.png");
+        background-size: 100% 100%;
+        background-color: #0065ca;
+    }
+
+    .red-triangle{
+        display: none;
+    }
+
+    .prizes-block_pic {
+        display: none;
+    }
+
+    .prizes-block_text {
+        width: 80rem;
+        margin-top: 11rem;
+        margin-left: 10rem;
+        font-size: 8.96465rem;
+        letter-spacing: 0.05rem;
+        line-height: 10rem;
+    }
+
+    .prizes__description > p {
+        width: 50rem;
+        margin-top: 13.3rem;
+        margin-left: 5rem;
+        font-size: 3.78788rem;
+        line-height: 5.2rem;
+        white-space: pre-line;
+    }
+
+    .prizes__btn {
+        position: absolute;
+        display: block;
+        width: 31.4rem;
+        margin-top: 6.6rem;
+        margin-left: 33rem;
+        padding: 2.35rem 1.4rem;
+        font-size: 3.7rem;
+        text-align: center;
+        border: 0.4rem solid white;
+    }
+
+    [data-img="lays-balloon"] {
+        height: 99rem;
+        margin-top: -0.5rem;
+        z-index: 1;
+        background-image: url("img/lays-promotions/lays-balloon.jpg");
+        background-size: cover;
+    }
+
+    [data-img="lays-balloon"]:hover {
+        transform: none;
+    }
+
+    [data-img="lays-on-the-beach"] {
+        order: 4;
+        height: 106rem;
+        margin-top: -4rem;
+        background-image: url("img/lays-promotions/lays-on-the-beach_mobile.jpg");
+        background-size: cover;
+    }
+
+    [data-img="lays-on-the-beach"]:hover {
+        transform: none;
+    }
+
+    [data-img="lays-map"] {
+        height: 101.015rem;
+        margin-top: 1.6rem;
+        background-image: url("img/lays-promotions/lays-map_mobile.png");
+        background-color: #b5d9f2;
+    }
+
+    .map__title > span {
+        margin-top: 32.2rem;
+        margin-left: 1rem;
+        font-size: 9.8rem;
+        letter-spacing: -0.2rem;
+        color: #000;
+    }
+
+    .map__btn > a {
+        position: absolute;
+        display: block;
+        width: 31.1rem;
+        margin-top: 3.9rem;
+        margin-left: -16.5rem;
+        padding: 2.35rem 1.4rem;
+        font-size: 3.7rem;
+        text-align: center;
+        border: 0.4rem solid white;
+    }
+
+    footer {
+        display: flex;
+        width: 100%;
+        height: 13rem;
+    }
+
+    .footer-field__description > img {
+        display: none;
+    }
+
+    .footer-field__description > p {
+        display: none;
+    }
+
+    .footer__mobile {
+        display: block;
+        padding-left: 9.5rem;
+        font-size: 2.84091rem;
+        letter-spacing: -0.15rem;
+        color: #b4b4b4;
+    }
+
+    .mess__section > a {
+        width: 14.1rem;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 8rem;
+    }
+
+    .animation-move-to-left {
+        animation: none;
+    }
+    
+    .animation-move-to-right {
+        animation: none;
+    }
+}
+
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/GothamPro.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/GothamProBlack.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/GothamPro-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/GothamPro-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/GothamPro-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
